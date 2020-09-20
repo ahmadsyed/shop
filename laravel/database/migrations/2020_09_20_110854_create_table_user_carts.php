@@ -19,6 +19,7 @@ class CreateTableUserCarts extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('title');
             $table->float('price');
+            $table->string('img_path');
             $table->timestamps();
         });
     }
@@ -30,8 +31,6 @@ class CreateTableUserCarts extends Migration
      */
     public function down()
     {
-        Schema::table('user_carts', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('user_carts');
     }
 }

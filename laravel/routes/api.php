@@ -15,5 +15,8 @@ use App\Http\Controllers\OrderController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
 Route::post('login', [AccessTokenController::class, 'issueToken'])->middleware(['api-login', 'throttle','cors']);
 Route::middleware(['auth:api','cors'])->post('/add-to-cart', [OrderController::class,'addToCart']);
+Route::middleware(['auth:api','cors'])->get('/get-cart-items', [OrderController::class,'getCartItems']);
+Route::middleware(['auth:api','cors'])->get('/buy-now', [OrderController::class,'buy']);
