@@ -2,17 +2,18 @@
 
 namespace App\Http\Models;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\softdelete;
 
-class UserCart extends Model
+class Router extends Model
 {
-
+    use softdelete; //delete query will softdelete only on this model
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'id','title', 'price', 'user_id'
+        'sapid','hostname', 'loopback', 'mac_address'
     ];
 
 }
