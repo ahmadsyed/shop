@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\softdelete;
 
 class Router extends Model
 {
-    use softdelete; //delete query will softdelete only on this model
+    use softdelete; //delete query will softdelete only, for this model
     /**
      * The attributes that are mass assignable.
      *
